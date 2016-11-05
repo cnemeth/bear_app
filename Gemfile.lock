@@ -217,6 +217,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   formtastic
+  i18n
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

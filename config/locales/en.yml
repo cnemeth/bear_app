@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+  time:
+    formats:
+      basic: "%m/%d/%Y"
+      nice: "%b %e, %l:%M %p"
+      nice_long: "%b %e, %Y at %l:%M %p"
+      nice_no_time: "%b %e, %Y"
+      nice_simple_time: "%R"
+      nice_time_only: "%l:%M %p"
+      compact: "%Y%m%dT%H%M%S%z"

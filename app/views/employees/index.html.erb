@@ -16,7 +16,7 @@
     <% @employees.each do |employee| %>
       <tr>
         <td><%= employee.name %></td>
-        <td><%= employee.signup_date %></td>
+        <td><%= I18n.l(employee.signup_date, format: :nice) %></td>
         <td><%= number_to_currency(average_total_price(employee)) %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
