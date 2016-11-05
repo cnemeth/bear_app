@@ -4,7 +4,7 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    @employees = Employee.all.sort_by(&:signup_date).reverse
   end
 
   # GET /employees/1
