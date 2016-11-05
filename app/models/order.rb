@@ -4,7 +4,6 @@
 #
 #  id          :integer          not null, primary key
 #  total_price :decimal(8, 2)
-#  decimal     :decimal(8, 2)
 #  num_units   :integer          default(0)
 #  employee_id :integer
 #  created_at  :datetime         not null
