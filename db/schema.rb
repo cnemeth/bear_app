@@ -10,6 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161104233247) do
 
+  create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "signup_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.decimal  "total_price", precision: 8, scale: 2
+    t.decimal  "decimal",     precision: 8, scale: 2
+    t.integer  "num_units",                           default: 0
+    t.integer  "employee_id"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.index ["employee_id"], name: "index_orders_on_employee_id", using: :btree
+  end
+
+  add_foreign_key "orders", "employees"
 end
