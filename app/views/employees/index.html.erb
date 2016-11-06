@@ -2,12 +2,14 @@
 
 <h1>Employees</h1>
 
+<button>Toggle Average Total Price column</button>
+
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Signup date</th>
-      <th>Average total price</th>
+      <th class="toggle-me">Average total price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +19,7 @@
       <tr>
         <td><%= employee.name %></td>
         <td><%= I18n.l(employee.signup_date, format: :nice) %></td>
-        <td><%= number_to_currency(average_total_price(employee)) %></td>
+        <td class="toggle-me"><%= number_to_currency(average_total_price(employee)) %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
