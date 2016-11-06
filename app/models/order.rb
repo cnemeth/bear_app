@@ -13,4 +13,6 @@
 class Order < ApplicationRecord
   belongs_to :employee, inverse_of: :orders
   validates :employee, presence: true
+
+  scope :last_ninety_days, ->() {where('created_at > ?', 90.days.ago)}
 end
