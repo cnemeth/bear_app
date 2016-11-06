@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = helpers.orders_by_employee_signup_date(Order.last_ninety_days)
   end
 
   # GET /orders/1
